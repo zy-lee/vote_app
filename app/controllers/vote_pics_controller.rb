@@ -19,6 +19,7 @@ class VotePicsController < ApplicationController
 	def upvote
 		@vote_pic = VotePic.find(params[:id])
 		@vote_pic.votes.create
+		redirect_to(root_path)
 	end
 
   private
