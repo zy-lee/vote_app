@@ -2,6 +2,8 @@
 
 one:
   vote_pic_id: 1
+  remote_ip: MyString
 
 two:
   vote_pic_id: 1
+  remote_ip: MyString

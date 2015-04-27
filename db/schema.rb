@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150424083259) do
+ActiveRecord::Schema.define(version: 20150426051536) do
 
   create_table "vote_pics", force: :cascade do |t|
     t.string   "src"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150424083259) do
 
   create_table "votes", force: :cascade do |t|
     t.integer  "vote_pic_id"
+    t.string   "remote_ip"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
