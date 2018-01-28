@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :vote_pics do
 		member do
-			post 'upvote'
+      post 'upvote'
+      post 'downvote'
 		end
 	end
 

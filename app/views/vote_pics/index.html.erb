@@ -3,10 +3,13 @@
 
   <tbody>
     <% @vote_pics.each do |vote_pic| %>
+      <br />
       <td>
         <tr><%= image_tag(vote_pic.src,art:vote_pic.src) %></tr>
-        <tr><%= pluralize(vote_pic.votes.count, "vote") %></tr>
-    		<tr><%= button_to '+1', upvote_vote_pic_path(vote_pic), method: :post %></tr> 
+        <tr><%= pluralize(vote_pic.votes.count, "个") %></tr>
+        <tr><%= button_to '+1', upvote_vote_pic_path(vote_pic), method: :post %></tr>
+        <tr><%= button_to '-1', downvote_vote_pic_path(vote_pic), method: :post %></tr>
+        <br />
        </td>
     <% end %>
   </tbody>

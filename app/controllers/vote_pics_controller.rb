@@ -21,7 +21,13 @@ class VotePicsController < ApplicationController
 		a = @vote_pic.votes.create
 		a.update_attributes(remote_ip: request.remote_ip)
 		redirect_to(root_path)
-	end
+  end
+
+  def downvote
+    @vote_pic = VotePic.find(params[:id])
+    @vote_pic.votes.first.destroy
+    redirect_to(root_path)
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
